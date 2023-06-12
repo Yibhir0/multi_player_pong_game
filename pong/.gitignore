@@ -1,0 +1,8 @@
+/DataComProjectTwo/target/
+*.log
+game.sav
+game.sav.enc
+/DataComProjectTwo/src/main/resources/*.p12
+/DataComProjectTwo/src/main/resources/gcmiv
+/DataComProjectTwo/src/main/resources/*.sig
+/DataComProjectTwo/nbproject/
