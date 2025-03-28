@@ -53,11 +53,19 @@ Special thanks to **Mr. Almas Baimagambetov** for his open-source contributions 
   signature
   gcmiv
 
-### Setup
-Firstly, decide who will be server and who will be client, and execute the ipconfig command on the server’s compute.
+### ⚙️ 2. Set Up Networking
+Firstly, decide who will be server and who will be client, and execute the ipconfig command on the server’s computer.
 Carefully mark down the IPv4 address displayed. Next, check if the path to the Java JDK is stored in your environment variables 
 (run echo $PATH if you are on Linux). If it is not, run "export PATH=$PATH:/path/to/jdk" for a Linux machine, or edit environment 
 variables for a Windows machine.
 
-### Running the program
-Now you are all set! Run the Pong application.
+### ▶️ 4. Run the Game
+You're ready to go!
+
+Launch PongApp.java from your IDE or terminal.
+
+On the server: select "Host Game"
+
+On the client(s): enter the server's IP and connect
+
+Enjoy secure and smooth Pong gameplay!
