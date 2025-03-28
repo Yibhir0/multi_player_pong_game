@@ -1,21 +1,57 @@
-# PongNetworkGame Structure
-The Pong Multiplayer Network Game is divided into four main packages: default package, entities, menus, and crypto. Each folder contains
-important parts of the program, particularly the crypto classes which are responsible for creating the keystore, generating symmetric and
-asymmetric keys, signing the PongApp.java file, validating and hashing the user’s password, as well as encrypting and decrypting the game
-file. The default package contains all classes required to allow multiplayer service over a network. The menus package, on the other hand,
-contains the two menus that will be displayed frequently to the user. The PongMainMenu holds methods to start a new game, load and start 
-a game and exit from the menu, while the PongGameMenu holds methods to resume the game, save it or exit from it. Both use cryptographic
-methods to ensure that the users have permission to access game files and nothing is altered in the source code that can lead to security
-vulnerabilities (all tasks are run on the server). 
+# 🕹️ Pong Multiplayer Network Game
 
-Most of the frontend classes implement FXGL and GameApplication functionality. Therefore, we would like to give a special thanks to 
-Mr. Baimagambetov for his contribution to open source software.
+This project is a secure, network-enabled multiplayer version of the classic **Pong** game. It incorporates cryptography to protect game files, authenticate players, and ensure secure communication. The game is built with **JavaFX/FXGL** and uses a modular structure with packages for gameplay, menus, and cryptographic operations.
 
-## Procedure to run the program
+---
 
-### Build
-Open the project in netbeans, clean and build the application. Delete the keystore.p12, signature and gcmiv files generated from
-the tests.
+## 📦 Project Structure
+
+The project is organized into four main packages:
+
+### 🔹 Default Package
+- Contains the **networking logic** enabling multiplayer gameplay over a network.
+- Manages communication between the client and server, and handles game logic.
+
+### 🔹 `entities`
+- Contains all game objects such as paddles, ball, and scoreboard.
+
+### 🔹 `menus`
+- Includes UI components and functionality for:
+  - `PongMainMenu`: Start a new game, load a saved game, or exit.
+  - `PongGameMenu`: Resume a game, save progress, or exit to the main menu.
+- Both menus utilize cryptographic checks to prevent unauthorized access and data tampering.
+
+### 🔹 `crypto`
+- Handles all **cryptographic operations**, including:
+  - Keystore creation
+  - Symmetric and asymmetric key generation
+  - Password hashing and validation
+  - Game file encryption/decryption
+  - Digital signing and signature verification of `PongApp.java`
+- All security operations are executed on the **server** side to prevent local manipulation.
+
+> 🛡️ **Security Note:** These cryptographic protections ensure that game integrity is maintained and unauthorized modifications are blocked.
+
+---
+
+## 🙏 Acknowledgements
+
+This game utilizes **FXGL** (a JavaFX game development framework).  
+Special thanks to **Mr. Almas Baimagambetov** for his open-source contributions that made this project possible.
+
+---
+
+## 🚀 How to Run the Game
+
+### 🧱 1. Build the Project
+
+- Open the project in **NetBeans** or your preferred Java IDE.
+- Perform a **Clean and Build** operation.
+- Delete any leftover cryptographic test artifacts:
+  ```text
+  keystore.p12
+  signature
+  gcmiv
 
 ### Setup
 Firstly, decide who will be server and who will be client, and execute the ipconfig command on the server’s compute.
